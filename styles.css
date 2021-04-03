@@ -115,10 +115,11 @@ h1 {
     flex-direction: row;
     justify-content: space-between;
     font-size: 1.15em;
+    color: gray;
 }
 
 .visited {
-    color: black;
+    color: gray;
 }
 
 .accordion .button {
@@ -133,7 +134,7 @@ h1 {
     overflow: hidden;
     padding-top: 10px;
     padding-right: 10px;
-    color: black;
+    color:gray;
     transition: max-height 0.5s ease-out;
 }
 
