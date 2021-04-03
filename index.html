@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="copy.css">
     </head>
 
     <body>
@@ -19,44 +19,70 @@
                 <div class="right">
                     <div class="content-wrapper">
                         <h1>FAQ</h1>
-                        <div class="faqContainer">
-                            <div class="faqs">
-                                <div>
-                                    <p class="questions">How many team members can I invite?</p>
-                                    <img src="./images/icon-arrow-down.svg" alt="unwrap-icon">
-                                </div>                               
+                        <div class="faqContainer" id="faqs">
+                            <div class="faqs" id="faqs1">
+                                    <a href="#faqs1" class="questions">How many team members can I invite? 
+                                        <img class="button" src="./images/icon-arrow-down.svg" alt="unwrap-icon">
+                                    </a>
+                                    <p class="answers">You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.</p>
+                            
                             </div>
-                            <div class="faqs">
-                                <div>
-                                    <p class=" questions active-question">What is the maximum file upload size?</p>
-                                    <img class="active-unwrap-icon" src="./images/icon-arrow-down.svg" alt="unwrap-icon">
-                                </div>
-                                <p class="answers">No more than 2GB. All files in your account must fit into your allotted storage space.</p>
-                                
+                            <div class="faqs" id="faqs2">
+                                    <a href="#faqs2" class="questions">What is the maximum file upload size?
+                                        <img class="button" src="./images/icon-arrow-down.svg" alt="unwrap-icon">
+                                    </a>
+                                    <p class="answers">No more than 2GB. All files in your account must fit into your allotted storage space.</p>
                             </div>
-                            <div class="faqs">
-                                <div>
-                                    <p class="questions">How do I reset my password?</p>
-                                    <img src="./images/icon-arrow-down.svg" alt="unwrap-icon">
-                                </div>                               
+                            <div class="faqs" id="faqs3">
+                                <a href="#faqs3" class="questions">How do I reset my password?
+                                    <img class="button" src="./images/icon-arrow-down.svg" alt="unwrap-icon">
+                                </a>
+                                <p class="answers">Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.</p>
                             </div>
-                            <div class="faqs">
-                                <div>
-                                    <p class="questions">Can I cancel my subscription?</p>
-                                    <img src="./images/icon-arrow-down.svg" alt="unwrap-icon">
-                                </div>                               
+                            <div class="faqs" id="faqs4">
+                                <a href="#faqs4" class="questions">Can I cancel my subscription?
+                                    <img class="button" src="./images/icon-arrow-down.svg" alt="unwrap-icon">
+                                </a>
+                                <p class="answers">Yes! Send us a message and we’ll process your request no questions asked.</p>
                             </div>
-                            <div class="faqs">
-                                <div>
-                                    <p class="questions">Do you provide additional support?</p>
-                                    <img src="./images/icon-arrow-down.svg" alt="unwrap-icon">
-                                </div>                               
+                            <div class="faqs" id="faqs5">
+                                <a href="#faqs5" class="questions">Do you provide additional support?
+                                    <img class="button" src="./images/icon-arrow-down.svg" alt="unwrap-icon">
+                                </a>
+                                <p class="answers"> Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
                             </div>
-                        </div>
                     </div>
                     
                 </div>
             </div>
         </div>
     </body>
+
+    <script>
+
+        var faq = document.getElementsByClassName('questions');
+        var buttons = document.getElementsByClassName('button');
+        var i;
+
+        for (i = 0; i < faq.length; i++) {
+        faq[i].addEventListener("click", function() {
+            this.classList.toggle('active');
+            var butts = this.firstElementChild;
+            var panel = this.nextElementSibling;
+            
+            if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;   
+            butts.style.transform = "rotate(360deg)"
+            this.classList.toggle('visited')
+            } else {
+            panel.style.maxHeight = panel.scrollHeight + 'px';
+            butts.style.transform = 'rotate(180deg)'
+            }
+        });
+        }
+
+
+    </script>
+    
+    
 </html>
